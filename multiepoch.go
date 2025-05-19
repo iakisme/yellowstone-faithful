@@ -348,15 +348,15 @@ func newMultiEpochHandler(handler *MultiEpoch, lsConf *ListenerConfig) func(ctx 
 			}
 
 			// limit request body size
-			if reqCtx.Request.Header.ContentLength() > 1024 {
-				replyJSON(reqCtx, http.StatusRequestEntityTooLarge, jsonrpc2.Response{
-					Error: &jsonrpc2.Error{
-						Code:    jsonrpc2.CodeInvalidRequest,
-						Message: "Request entity too large",
-					},
-				})
-				return
-			}
+			// if reqCtx.Request.Header.ContentLength() > 1024 {
+			// 	replyJSON(reqCtx, http.StatusRequestEntityTooLarge, jsonrpc2.Response{
+			// 		Error: &jsonrpc2.Error{
+			// 			Code:    jsonrpc2.CodeInvalidRequest,
+			// 			Message: "Request entity too large",
+			// 		},
+			// 	})
+			// 	return
+			// }
 		}
 		// read request body
 		body, err := getRequestBody(reqCtx)
