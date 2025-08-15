@@ -1,6 +1,3 @@
-//go:build ffi
-// +build ffi
-
 package jsonparsed
 
 /*
